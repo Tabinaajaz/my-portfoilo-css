@@ -99,41 +99,96 @@ margin: 2px;
     background-color: #f06161;
     color: rgb(17, 16, 16);
   }
-  .navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    margin-left:5px;
-    padding: auto;
-    margin-right: auto;
+  /* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
 
+.container1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #444;
+  min-width: 150px;
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color:#bcafaf
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items:stretch;
   }
-  .container{
-    width: 100%;/* full width*/
-     max-width: 1200px; /* maximum width*/
-   margin: auto;  /*center alignmemt */ 
+
+  .container1 {
+    margin-bottom: 0px;
   }
-  /* Defult style */
-  .container{
-    display: flex;
-    flex-direction:column;
+
+  .dropdown-content {
+    position: static;
+    width: 100%;
+    box-shadow: none;
   }
-  /* for tablets */
-  @media(max-width:768px) {
-    .container{
-       flex-direction:rows/*column; stack items vertica */
+
+  .dropdown-content a {
+    text-align: center;
+    border-bottom: 1px solid #555;
+  }
+}
+
+@media (max-width: 480px) {
+  .container1 {
+    font-size: 1.2rem;
+  }
+
+  .dropdown-content a {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+
     
-  }
-    @media (max-width:480px) {
-      .itmes{
-        padding: 5px; /*smaller   padding on moblie*/
-      }
-      
-    }
   
-
-    
-  }
   /* hero section */
   section{
   
@@ -179,152 +234,194 @@ h2{
 }
 
   /* skill work */
-  *{box-sizing: border-box;}
-  /* basic style for skill-container */
+  
+
+/* Container for the skill section */
 .skill-container {
-  width: 50%;
-  margin: auto;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #000;
-}
-/* heading skill  */
-.heading-skill{
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-style:italic bold;
-text-size-adjust: 3px;
-text-shadow: #000;
-position: relative;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
-
-}
-/* glow */
-@-webkit-keyframes glow{
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-  }
 }
 
-
-
-
-/* skill main div */
-#skill {
-  margin: 10px 0;}
-/* skill bar  background */
-  skill-bar{
-    position: relative;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    overflow: -moz-hidden-unscrollable;
-    height: 30px;
-    margin-bottom: 10px;
-  }
-/*s inividual skill fill color */
-.html .skill-fill{width: 60%; background-color: hsl(158, 95%, 34%); position:-ms-page ;}
-.css .skill-fill {width: 60%; background-color: #2196F3;}
-.js .skill-fill {width: 65%; background-color: #f44336;}
-.ts .skill-fill{width: 50%; background-color: #808080;}
-/* skill-label */
-.skill-label{
-display: flex;
-justify-content: space-between;
-padding:5px 0;
-color: white;
-font-weight: bold;
+.heading-skill {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
 }
 
-/* text within the skill bars */
-.skill-fill{
-  height: 100%;
-  text-align: right;
-  padding-right: 10px;
-  color: white;
-  font-weight:bold ;
-  
-}
-button{
-  font-size: large;
-  color: #808080;
-  
-  } 
-
-  .form{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-seri;
-    font-size: medium;
-    place-items: center;
-    display: flexbox;
-    
-     
-  }
-    .form-contact{
-    display: flex;
-    align-items: column;
-    justify-content: center;
-    margin: auto;
-    width: 50%;
-    padding: 20px;
-    /* background-color: rgb(58, 171, 135); */
-    border-radius: 0px,4px,6px;
-  
+/* Individual skill blocks */
+.skill {
+  margin: 15px 0;
+  text-align: left;
 }
 
-/* for tablets */
-@media(max-width:768px) {
-  .form-contact{
-     flex-direction:column/*column; stack items vertica
-     
-
-}
-  @media (max-width:480px) {
-    .itmes{
-      padding: 5px; smaller  /* padding on moblie */
-    } 
-    
-  } 
-
-
-/* footer */
-.footer {
-  background-color: #F1F1F1;
-  text-align: center;
-  padding: 10px;
-}
-.footer-container{
+.skill-label {
   display: flex;
-  justify-content: space-evenly;
-  border-block:1px solid;
-  border-width: 1px;
-  box-sizing: border-box;
-  background-color: #c9cacab6;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #555;
+  font-weight: bold;
 }
 
-.footer-contact{
-  /* display:flexbox; */
- justify-content:space-between; /*eaqual sapce  dono section me*/
- align-items:center ;/* vetical alignment ko control  karna lie*/
- padding: 5px 4px;
+/* Skill bar */
+.skill-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
 }
-.list-footer{
-  display: none;
-margin: 0px;
-display:flex ;
-}
-/* for tablets */
-@media(max-width:768px) {
-  .footer-container{
-     flex-direction:rows;/*column; stack items vertica
-     
 
+.skill-fill {
+  height: 100%;
+  border-radius: 10px;
 }
-  @media (max-width:480px) {
-    .itmes{
-      padding: 5px; smaller  /* padding on moblie */
-    } 
-    
-  } 
+
+/* Skill levels */
+.html {
+  width: 60%;
+  background-color: #f16529;
+}
+
+.css {
+  width: 60%;
+  background-color: #2965f1;
+}
+
+.ts {
+  width: 50%;
+  background-color: #007acc;
+}
+
+.js {
+  width: 50%;
+  background-color: #f7df1e;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .heading-skill {
+    font-size: 1.5rem;
+  }
+
+  .skill-label {
+    font-size: 0.9rem;
+  }
+
+  .skill-bar {
+    height: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-container {
+    padding: 10px;
+  }
+
+  .heading-skill {
+    font-size: 1.2rem;
+  }
+
+  .skill-label {
+    font-size: 0.8rem;
+  }
+
+  .skill-bar {
+    height: 12px;
+  }
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 10px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content:space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-contact {
+  flex: 2;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.footer-contact h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #f4f4f4;
+  ;
+  
+}
+
+.footer-contact p {
+  margin: 5px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.list-footer {
+  display: flex;
+
+  gap: 15px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-footer li {
+  display: inline-block;
+}
+
+.list-footer a {
+  color: #1e90ff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.list-footer a:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-contact {
+    margin: 20px 0;
+  }
+
+  .list-footer {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 15px 5px;
+  }
+
+  .footer-contact h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-contact p {
+    font-size: 0.9rem;
+  }
+
+  .list-footer a {
+    font-size: 1.2rem;
+  }
+}
